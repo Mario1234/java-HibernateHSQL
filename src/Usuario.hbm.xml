@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<!-- definicion xml del bean del DAO, creo... -->
+<hibernate-mapping>
+    <class name="Usuario" table="USUARIO" dynamic-update="false" dynamic-insert="false">
+        <cache usage="read-write"/>
+        <id name="id" column="ID" type="java.lang.Integer">
+            <generator class="increment"></generator>
+        </id>
+        <property name="nombre" type="java.lang.String" update="true" insert="true" access="property" column="NOMBRE"/>
+        <property name="apellido" type="java.lang.String" update="true" insert="true" access="property" column="APELLIDO"/>
+    </class>
+</hibernate-mapping>
